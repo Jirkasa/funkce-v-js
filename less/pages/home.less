@@ -1,10 +1,39 @@
 .welcome-section {
+    display: flex;
+    flex-direction: column;
+
+    height: 100vh;
 
     &__header-side {
         height: 12rem;
+        flex: 0 0;
     }
 
     &__content-side {
+        background-color: @colors[secondary];
+        flex: 1;
+    }
 
+    &__content {
+        width: 100%;
+        max-width: @grid-width;
+        margin: 0 auto;
+    }
+}
+
+.section {
+    padding: 9rem 3rem;
+
+    &__content {
+        width: 100%;
+        max-width: @grid-width;
+        margin: 0 auto;
+    }
+
+    &--white-bg {
+        background-color: @colors[white];
+    }
+    &--grey-bg {
+        background-color: @colors[grey];
     }
 }

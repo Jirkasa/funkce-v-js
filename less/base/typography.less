@@ -3,3 +3,44 @@
 body {
     font-family: 'PT Sans', sans-serif;
 }
+
+.heading-secondary {
+    font-size: 3rem;
+    font-weight: normal;
+
+    color: @colors[text];
+}
+
+.heading-tertiary {
+    font-size: 2.3rem;
+    font-weight: normal;
+
+    color: @colors[text];
+}
+
+.heading-quaternary {
+    font-size: 1.8rem;
+    font-weight: normal;
+
+    color: @colors[text];
+}
+
+.paragraph {
+    font-size: 1.5rem;
+
+    line-height: 1.7;
+
+    color: @colors[text];
+}
+
+.unordered-list {
+    font-size: 1.5rem;
+
+    color: @colors[text];
+
+    li {
+        &:not(:last-child) {
+            margin-bottom: .5rem;
+        }
+    }
+}
