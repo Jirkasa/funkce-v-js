@@ -1,70 +1,15 @@
 .header {
-    height: 12rem;
+    height: 9rem;
 
     background-color: @colors[white];
 
-    &__content {
-        height: 100%;
-        width: 100%;
-        max-width: @grid-width;
-        margin: 0 auto;
+    font-size: 3.5rem;
+    font-weight: 700;
 
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
+    color: @colors[secondary];
+    text-transform: uppercase;
 
-        padding-bottom: 4rem;
-    }
+    text-align: center;
 
-    &__heading {
-        font-size: 3.5rem;
-        font-weight: 700;
-
-        color: @colors[secondary];
-        text-transform: uppercase;
-    }
-
-    &__nav {
-        ul {
-            list-style: none;
-            display: flex;
-
-            padding-bottom: 1rem;
-        }
-    }
-
-    &__nav-item {
-        &:not(:last-child) {
-            padding-right: 4.2rem;
-
-            position: relative;
-            
-            &::after {
-                content: "";
-                position: absolute;
-                top: 50%;
-                right: 2rem;
-                transform: translateY(-50%);
-
-                height: 85%;
-                width: .2rem;
-
-                background-color: @colors[text];
-            }
-        }
-
-        a {
-            &:link, &:visited {
-                font-size: 1.5rem;
-                
-                color: @colors[text];
-                text-transform: uppercase;
-                text-decoration: none;
-            }
-
-            &:hover {
-                color: @colors[primary];
-            }
-        }
-    }
+    padding-top: 2rem;
 }

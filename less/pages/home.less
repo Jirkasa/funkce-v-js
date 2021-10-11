@@ -2,22 +2,58 @@
     display: flex;
     flex-direction: column;
 
-    height: 100vh;
+    height: ~"calc(100vh - 9rem)";
+    max-height: 100rem;
 
-    &__header-side {
-        height: 12rem;
-        flex: 0 0;
-    }
+    background-color: @colors[secondary];
 
-    &__content-side {
-        background-color: @colors[secondary];
-        flex: 1;
-    }
+    padding: 9rem 3rem;
 
     &__content {
         width: 100%;
         max-width: @grid-width;
         margin: 0 auto;
+
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__links {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 3rem;
+        align-content: center;
+    }
+
+    &__link {
+        &:link, &:visited {
+            background-color: @colors[primary];
+    
+            font-size: 2.5rem;
+            
+            color: @colors[white];
+            text-decoration: none;
+            border-radius: .5rem;
+    
+            padding: 2rem;
+    
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        &:hover {
+            background-color: darken(@colors[primary], 8%);
+        }
+
+        &:active {
+            background-color: darken(@colors[primary], 15%);
+            color: darken(@colors[white], 5%);
+        }
     }
 }
 

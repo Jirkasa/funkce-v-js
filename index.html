@@ -14,42 +14,28 @@
 </head>
 <body>
     <div class="page">
+        <header class="header">Funkce v JS</header>
         <section class="welcome-section">
-            <div class="welcome-section__header-side">
-                <header class="header">
-                    <div class="header__content">
-                        <div class="header__heading">Funkce v JS</div>
-                        <nav class="header__nav">
-                            <ul>
-                                <li class="header__nav-item">
-                                    <a href="#">co to je</a>
-                                </li>
-                                <li class="header__nav-item">
-                                    <a href="#">tvorba</a>
-                                </li>
-                                <li class="header__nav-item">
-                                    <a href="#">návratové hodnoty</a>
-                                </li>
-                                <li class="header__nav-item">
-                                    <a href="#">parametry</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </header>
-            </div>
-            <div class="welcome-section__content-side">
-                <div class="welcome-section__content">
-                    <!-- Vše o funkcích v JS na jedné stránce -->
+            <div class="welcome-section__content">
+                <h1 class="heading-primary u-margin-bottom-large u-center-text">Skoro vše o funkcích v JS na jedné stránce</h1>
+                <div class="welcome-section__links">
+                    <a href="#co-je-to-funkce" class="welcome-section__link"><span>Co je to funkce</span></a>
+                    <a href="#vytvareni-funkci" class="welcome-section__link"><span>Vytváření funkcí</span></a>
+                    <a href="#navratove-hodnoty" class="welcome-section__link"><span>Návratové hodnoty</span></a>
+                    <a href="#parametry" class="welcome-section__link"><span>Parametry</span></a>
+                    <a href="#klicove-slovo-this" class="welcome-section__link"><span>Klíčové slovo this</span></a>
+                    <a href="#konstruktor-funkce" class="welcome-section__link"><span>Konstruktor funkce</span></a>
+                    <a href="#closure" class="welcome-section__link"><span>Closure</span></a>
+                    <a href="#iife" class="welcome-section__link"><span>IIFE</span></a>
                 </div>
             </div>
         </section>
-        <section class="section section--white-bg">
+        <section id="co-je-to-funkce" class="section section--white-bg">
             <div class="section__content">
                 <h2 class="heading-secondary u-margin-bottom-medium">Co je to funkce</h2>
                 <div class="grid">
                     <div>
-                        <p class="paragraph u-margin-bottom-medium">Funkce je část kódu, kterou můžeme volat a použít na různých místech kódu. Pokud děláme stejnou věc na více místech našeho kódu, tak je pravděpodobně lepší si na to vytvořit funkci a tu potom volat, než pořád opisovat stejný kód.</p>
+                        <p class="paragraph u-margin-bottom-medium">Funkce je část kódu, kterou můžeme použít na různých místech kódu. Pokud děláme stejnou věc na více místech našeho kódu, tak je pravděpodobně lepší si na to vytvořit funkci a tu potom volat, než pořád opisovat stejný kód.</p>
                         <p class="paragraph">Funkci si můžeme vytvořit na cokoliv, třeba na výpočet obvodu kruhu nebo vypsání nějaké zprávy do konzole.</p>
                     </div>
                     <div>
@@ -67,10 +53,10 @@ pozdrav();</code></pre>
                 </div>
             </div>
         </section>
-        <section class="section section--grey-bg">
+        <section id="vytvareni-funkci" class="section section--grey-bg">
             <div class="section__content">
                 <h2 class="heading-secondary u-margin-bottom-medium">Vytváření funkcí</h2>
-                <p class="paragraph u-margin-bottom-medium">Funkci můžeme v JavaScriptu vytvořit třemi způsoby: deklarováním, přiřazením nebo přiřazením arrow funkce. Funkce jsou v JavaScriptu objekty, po jejich vytvoření je můžeme klidně předávat do jiných funkcí nebo jim dokonce přiřazovat vlastní vlastnosti.</p>
+                <p class="paragraph u-margin-bottom-medium">Funkci můžeme v JavaScriptu vytvořit třemi způsoby: deklarováním, přiřazením nebo přiřazením arrow funkce. Funkce jsou v JavaScriptu objekty, po jejich vytvoření je můžeme klidně předávat do jiných funkcí nebo jim dokonce přiřazovat vlastní vlastnosti. Každá funkce má vlastnost name, která uchovává její jméno.</p>
                 <div class="grid">
                     <div>
                         <h3 class="heading-tertiary u-margin-bottom-small">deklarováním</h3>
@@ -96,7 +82,7 @@ pozdrav();</code></pre>
                 </div>
             </div>
         </section>
-        <section class="section section--white-bg">
+        <section id="navratove-hodnoty" class="section section--white-bg">
             <div class="section__content">
                 <h2 class="heading-secondary u-margin-bottom-medium">Návratové hodnoty</h2>
                 <p class="paragraph u-margin-bottom-medium">Někdy můžeme chtít, aby nám naše funkce po dokončení své operace vrátila nějakou hodnotu. Tuto hodnotu bychom si potom například mohli uložit do nějaké proměnné. Hodnotu můžeme z funkce vrátit pomocí klíčového slova return za které napíšeme co chceme vrátit. Příkaz return zároveň ukončí provádění funkce, takže pokud za ním následuje ještě nějaký kód, tak už se neprovede. Příkaz return můžeme použít také bez vracení nějaké hodnoty když chceme z nějakého důvodu předčasně ukončit provádění funkce.</p>
@@ -110,7 +96,7 @@ const cislo1 = nahodneCislo();
 const cislo2 = nahodneCislo();</code></pre>
             </div>
         </section>
-        <section class="section section--grey-bg">
+        <section id="parametry" class="section section--grey-bg">
             <div class="section__content">
                 <h2 class="heading-secondary u-margin-bottom-medium">Parametry</h2>
                 <p class="paragraph u-margin-bottom-medium">Funkce může přijímat nějaké parametry (hodnoty), které jí při jejím volání předáváme. S těmito parametry může pracovat a ovlivnit tak svůj výsledek.</p>
@@ -163,7 +149,7 @@ const soucet = (...cisla) => {
 const cislo = soucet(3, 5, 2);</code></pre>
             </div>
         </section>
-        <section class="section section--white-bg">
+        <section id="klicove-slovo-this" class="section section--white-bg">
             <div class="section__content">
                 <h2 class="heading-secondary u-margin-bottom-medium">Klíčové slovo this</h2>
                 <p class="paragraph u-margin-bottom-small">V JavaScriptu existuje klíčové slovo this, které má různé hodnoty podle toho kde jej používáme. V tomto seznamu je popsáno čemu se v jakých případech klíčové slovo this rovná:</p>
@@ -239,7 +225,7 @@ vypisObjekt1('Klíčové slovo this:', 3);
 vypisObjekt2(3); // první parametr jsme si přednastavili při vytváření funkce</code></pre>
             </div>
         </section>
-        <section class="section section--grey-bg">
+        <section id="konstruktor-funkce" class="section section--grey-bg">
             <div class="section__content">
                 <h2 class="heading-secondary u-margin-bottom-medium">Konstruktor funkce</h2>
                 <p class="paragraph u-margin-bottom-medium">Konstruktor funkce je funkce, kterou jsme si vytvořili za účelem vytváření objektů. Je zaběhlá konvence psát první písmeno jména konstruktor funkce velkým písmenem, abychom tak označili že se jedná o konstruktor funkci. Arrow funkce nefungují jako konstruktor funkce, protože nedostávají vlastní this hodnotu.</p>
@@ -263,29 +249,29 @@ const pavel = new Osoba('Pavel', 2005);
                 <p class="paragraph">Konstruktor funkce se již v JavaScriptu moc nepoužívají protože od ES6 máme třídy, které jsou pro ně syntaktickým cukříkem. Pokud ale budeme třídy používat, myslím že je důležité chápat jak doopravdy vlastně fungují.</p>
             </div>
         </section>
-        <section class="section section--white-bg">
+        <section id="closure" class="section section--white-bg">
             <div class="section__content">
                 <h2 class="heading-secondary u-margin-bottom-medium">Closure</h2>
                 <p class="paragraph u-margin-bottom-medium">JavaScript má v sobě zabudovaný mechanismus, kterému se říká closure. Díky closure má funkce, která se nachází v jiné funkci vždy přístup k jejím proměnným i když tato funkce již skončila.</p>
-                <pre class="code-box"><code>const vytvoritPozdravFunkci = function(pozdrav) {
+                <pre class="code-box"><code>const vytvorPozdravFunkci = function(pozdrav) {
     // funkce vrátí novou funkci (poté skončí)
     return function(name) {
-        // i když funkce vytvořitPozdravFunkci již skončila, díky closure máme hodnotu proměnné pozdrav stále k dispozici
+        // i když funkce vytvorPozdravFunkci již skončila, díky closure máme hodnotu proměnné pozdrav stále k dispozici
         console.log(`${pozdrav} ${name}`);
     }
 }
 
-const pozdrav1 = vytvoritPozdravFunkci('Ahoj');
-const pozdrav2 = vytvoritPozdravFunkci('Čau');
+const pozdrav1 = vytvorPozdravFunkci('Ahoj');
+const pozdrav2 = vytvorPozdravFunkci('Čau');
 
-pozdrav1("Karle"); // vypíše Ahoj Karle
-pozdrav2("Pavle"); // vypíše: Čau Pavle</code></pre>
+pozdrav1("Karle"); // vypíše: "Ahoj Karle"
+pozdrav2("Pavle"); // vypíše: "Čau Pavle"</code></pre>
             </div>
         </section>
-        <section class="section section--grey-bg">
+        <section id="iife" class="section section--grey-bg">
             <div class="section__content">
                 <h2 class="heading-secondary u-margin-bottom-medium">IIFE</h2>
-                <p class="paragraph u-margin-bottom-medium">Immidiately Invoked Function Expression (IIFE) je funkce, která se spustí hned jak ji deklarujeme. IIFE se používá k obalení kódu když vytváříme například nějakou knihovnu. Nechceme aby nám někdo kdo s knihovnou bude pracovat například přepsal nějaké proměnné. Pokud je obalíme do IIFE funkce, tak k nim nebude mít přístup.</p>
+                <p class="paragraph u-margin-bottom-medium">Immidiately Invoked Function Expression (IIFE) je funkce, která se spustí hned jak ji deklarujeme. IIFE se používá k obalení kódu když vytváříme například nějakou knihovnu. Nechceme aby nám někdo kdo s knihovnou bude pracovat například přepsal nějaké proměnné. Pokud je obalíme do IIFE funkce, tak k nim nebude mít přístup a nebude je moci přepsat. Jak IIFE vytvořit ukazuje následující ukázka. Funguje to díky closure.</p>
                 <pre class="code-box u-margin-bottom-medium"><code>
 const pocitadlo = (function() {
     let pocet = 0;
@@ -305,7 +291,7 @@ const pocitadlo = (function() {
 // proměnnou pocet ale můžeme měnit pomocí metod v objektu pocitadlo, který IIFE funkce vrátila
 pocitadlo.zvys();
 pocitadlo.vypis();</code></pre>
-                <p class="paragraph">IIFE funkce se v JavaScriptu už tolik nepoužívají, ale můžeme se s nimi setkat u některých starších knihoven. Od ES6 máme k dispozici moduly.</p>
+                <p class="paragraph">IIFE funkce se v JavaScriptu už tolik nepoužívají, ale můžeme se s nimi setkat u některých knihoven. Od ES6 máme k dispozici moduly.</p>
             </div>
         </section>
         <footer class="footer">

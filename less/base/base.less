@@ -6,10 +6,23 @@
 
 html {
     font-size: 62.5%; // 1rem = 10px
+
+    #respond-tab-land(
+        {
+            font-size: 56.25%; // 1rem = 9px
+        }
+    );
+    #respond-big-desktop(
+        {
+            font-size: 68.75%; // 1rem = 11px
+        }
+    );
+
+    scroll-behavior: smooth;
 }
 
 body {
     box-sizing: border-box;
 
-    background-color: red;
+    background-color: @colors[background];
 }
