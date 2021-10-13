@@ -2,13 +2,21 @@
     max-width: @max-page-width;
     margin: 0 auto;
 
-    @media (min-width: #pxToEm(1560)[]) {
+    // overflow-x: hidden;
+
+    @media (min-width: #pxToEm(1760)[]) {
         margin: 3rem auto;
     }
-    @media (min-width: #pxToEm(1580)[]) {
+    @media (min-width: #pxToEm(1780)[]) {
         margin: 4rem auto;
     }
-    @media (min-width: #pxToEm(1610)[]) {
+    #respond-big-desktop({
+        margin: 0 auto;
+    });
+    @media (min-width: #pxToEm(1930)[]) {
+        margin: 3rem auto;
+    }
+    @media (min-width: #pxToEm(1980)[]) {
         margin: 5rem auto;
     }
 }
