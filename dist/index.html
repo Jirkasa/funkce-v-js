@@ -1,0 +1,160 @@
+<!DOCTYPE html><html lang="cs"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=yes maximum-scale=2.2 minimum-scale=1.0"><link rel="stylesheet" href="./index.dace8143.css"><link rel="icon" type="image/svg+xml" href="./favicon.9acbb261.svg"><meta name="author" content="Jiří Satora"><meta name="description" content="Skoro vše o funkcích v JavaScriptu na jedné stránce."><script src="./index.da426c9d.js"></script><script>hljs.highlightAll();</script><title>Funkce v JS</title></head><body> <div class="page"> <header class="header">Funkce v JS</header> <section class="welcome-section"> <div class="welcome-section__content"> <h1 class="heading-primary u-center-text u-margin-bottom-large">Skoro vše o funkcích v JS na jedné stránce</h1> <div class="welcome-section__links"> <a href="#co-je-to-funkce" class="welcome-section__link"><span>Co je to funkce</span></a> <a href="#vytvareni-funkci" class="welcome-section__link"><span>Vytváření funkcí</span></a> <a href="#navratove-hodnoty" class="welcome-section__link"><span>Návratové hodnoty</span></a> <a href="#parametry" class="welcome-section__link"><span>Parametry</span></a> <a href="#klicove-slovo-this" class="welcome-section__link"><span>Klíčové slovo this</span></a> <a href="#konstruktor-funkce" class="welcome-section__link"><span>Konstruktor funkce</span></a> <a href="#closure" class="welcome-section__link"><span>Closure</span></a> <a href="#iife" class="welcome-section__link"><span>IIFE</span></a> </div> </div> </section> <section id="co-je-to-funkce" class="section section--white-bg"> <div class="section__content"> <h2 class="heading-secondary u-margin-bottom-medium">Co je to funkce</h2> <div class="grid"> <div> <p class="paragraph u-margin-bottom-medium">Funkce je část kódu, kterou můžeme použít na různých místech kódu. Pokud děláme stejnou věc na více místech našeho kódu, tak je pravděpodobně lepší si na to vytvořit funkci a tu potom volat, než pořád opisovat stejný kód.</p> <p class="paragraph">Funkci si můžeme vytvořit na cokoliv, třeba na výpočet obvodu kruhu nebo vypsání nějaké zprávy do konzole.</p> </div> <div> <pre class="code-box"><code>// vytvoření funkce
+function pozdrav() {
+    console.log("ahoj");
+}
+
+// zavolání funkce
+pozdrav();
+
+// zavolání funkce ještě jednou
+pozdrav();</code></pre> </div> </div> </div> </section> <section id="vytvareni-funkci" class="section section--grey-bg"> <div class="section__content"> <h2 class="heading-secondary u-margin-bottom-medium">Vytváření funkcí</h2> <p class="paragraph u-margin-bottom-medium">Funkci můžeme v JavaScriptu vytvořit třemi způsoby: deklarováním, přiřazením nebo přiřazením arrow funkce. Funkce jsou v JavaScriptu objekty, po jejich vytvoření je můžeme klidně předávat do jiných funkcí nebo jim dokonce přiřazovat vlastní vlastnosti. Každá funkce má vlastnost name, která uchovává její jméno.</p> <div class="grid"> <div> <h3 class="heading-tertiary u-margin-bottom-small">deklarováním</h3> <p class="paragraph u-margin-bottom-small">Klasický způsob jak vytvořit funkci je jejím deklarováním, jak ukazuje ukázka.</p> <pre class="code-box"><code>function pozdrav() {
+    console.log("ahoj");
+}</code></pre> </div> <div> <h3 class="heading-tertiary u-margin-bottom-small">přiřazením</h3> <p class="paragraph u-margin-bottom-small">Funkce se dá vytvořit i tak, že ji přiřazíme do proměnné, jak ukazuje ukázka.</p> <pre class="code-box"><code>const pozdrav = function() {
+    console.log("ahoj");
+}</code></pre> </div> <div> <h3 class="heading-tertiary u-margin-bottom-small">přiřazením arrow funkce</h3> <p class="paragraph u-margin-bottom-small">V JavaScriptu můžeme vytvářet také arrow funkce. Také je můžeme uložit do proměnných.</p> <pre class="code-box"><code>const pozdrav = () => {
+    console.log("ahoj");
+}</code></pre> </div> </div> </div> </section> <section id="navratove-hodnoty" class="section section--white-bg"> <div class="section__content"> <h2 class="heading-secondary u-margin-bottom-medium">Návratové hodnoty</h2> <p class="paragraph u-margin-bottom-medium">Někdy můžeme chtít, aby nám naše funkce po dokončení své operace vrátila nějakou hodnotu. Tuto hodnotu bychom si potom například mohli uložit do nějaké proměnné. Hodnotu můžeme z funkce vrátit pomocí klíčového slova return za které napíšeme co chceme vrátit. Příkaz return zároveň ukončí provádění funkce, takže pokud za ním následuje ještě nějaký kód, tak už se neprovede. Příkaz return můžeme použít také bez vracení nějaké hodnoty když chceme z nějakého důvodu předčasně ukončit provádění funkce.</p> <pre class="code-box"><code>function nahodneCislo() {
+    // použití funkce Math.random, která vrací náhodné číslo od 0 do 1
+    // (hodnotu, kterou nám funkce vrátí opět vrátíme v naší funkci)
+    return Math.random();
+}
+
+const cislo1 = nahodneCislo();
+const cislo2 = nahodneCislo();</code></pre> </div> </section> <section id="parametry" class="section section--grey-bg"> <div class="section__content"> <h2 class="heading-secondary u-margin-bottom-medium">Parametry</h2> <p class="paragraph u-margin-bottom-medium">Funkce může přijímat nějaké parametry (hodnoty), které jí při jejím volání předáváme. S těmito parametry může pracovat a ovlivnit tak svůj výsledek.</p> <pre class="code-box u-margin-bottom-medium"><code>// funkce přijímající dva parametry
+function secti(cislo1, cislo2) {
+    // s hodnotami, které funkci předáme může funkce pracovat
+    const vysledek = cislo1 + cislo2;
+    return vysledek;
+}</code></pre> <h3 class="heading-tertiary u-margin-bottom-small">Defaultní parametry</h3> <p class="paragraph u-margin-bottom-medium">Pokud chceme, tak můžeme některým parametrům funkce nastavit defaultní hodnotu. Díky tomu budeme moci funkci volat s méně parametry než funkce očekává a ty zbývající dostanou defaultní hodnotu když je nepředáme.</p> <pre class="code-box u-margin-bottom-medium"><code>// funkce s parametrem, který má defaultní hodnotu
+const mocnina = function(zaklad, exponent = 2) {
+    let vysledek = zaklad;
+    for (let i = 1; i < exponent; i++) {
+        vysledek = vysledek * zaklad;
+    }
+    return vysledek;
+}
+
+// funkce mocnina jde zavolat s jedním i dvěma parametry
+const cislo1 = mocnina(5, 3);
+const cislo2 = mocnina(4);
+</code></pre> <h3 class="heading-tertiary u-margin-bottom-small">Proměnný počet parametrů</h3> <p class="paragraph u-margin-bottom-small">Pokud chceme nastavit abychom do funkce mohli předávat proměnné množství hodnot, tak můžeme použít array-like objekt arguments nebo rest parametr, který byl přidán v ES6. Array-like objekt arguments je k dispozici jen v normálních funkcích, v arrow funkcích ne. Pokud píšeme moderní JavaScript, tak bychom měli používat rest parametr.</p> <h4 class="heading-quaternary u-margin-bottom-small">Starší způsob (arguments objekt)</h4> <pre class="code-box u-margin-bottom-medium"><code>const soucet = function() {
+    let vysledek = 0;
+    // array-like objekt arguments obsahuje všechny parametry, které se funkci předali
+    for (let i = 0; i &lt; arguments.length; i++) {
+        vysledek += arguments[i];
+    }
+    return vysledek;
+}
+
+// funkci soucet můžeme zavolat s jakýmkoliv množstvím argumentů
+const cislo = soucet(3, 5, 2);</code></pre> <h4 class="heading-quaternary u-margin-bottom-small">Novější způsob (rest parametr)</h4> <pre class="code-box"><code>// předané parametry se převedou na pole se kterým může funkce pracovat
+const soucet = (...cisla) => {
+    let vysledek = 0;
+    for (let i = 0; i < cisla.length; i++) {
+        vysledek += cisla[i];
+    }
+    return vysledek;
+}
+
+// funkci soucet můžeme zavolat s jakýmkoliv množstvím argumentů
+const cislo = soucet(3, 5, 2);</code></pre> </div> </section> <section id="klicove-slovo-this" class="section section--white-bg"> <div class="section__content"> <h2 class="heading-secondary u-margin-bottom-medium">Klíčové slovo this</h2> <p class="paragraph u-margin-bottom-small">V JavaScriptu existuje klíčové slovo this, které má různé hodnoty podle toho kde jej používáme. V tomto seznamu je popsáno čemu se v jakých případech klíčové slovo this rovná:</p> <ul class="u-margin-bottom-medium unordered-list"> <li>v globálním prostoru (mimo funkci) bude klíčové slovo this odkazovat na globální objekt (window objekt)</li> <li>v metodě (funkci, která patří objektu) bude klíčové slovo this odkazovat na objekt, který metodu volá</li> <li>ve funkci bude při zapnutém strict módu (když na začátek scriptu napíšeme 'use strict';) klíčové slovo this undefined</li> <li>ve funkci bude při vypnutém strict módu klíčové slovo this odkazovat na globální objekt (window objekt)</li> <li>arrow funkce nemění čemu se klíčové slovo this bude rovnat, bude se rovnat tomu čemu se rovnala v předešlém scopu (pokud je arrow funkce například vnořená v normální funkci a je zapnutý strict mód, tak bude klíčové slovo this undefined)</li> <li>ve funkci, kterou předáváme metodě addEventListener bude klíčové slovo this odkazovat na DOM element, kterému jsme event listener přidali</li> </ul> <pre class="code-box u-margin-bottom-medium"><code>'use strict'; // zapnutí strict módu
+
+console.log(this); // globální objekt (window)
+
+function vypisThis {
+    console.log(this); // undefined (protože je zapnutý strict mód)
+}
+vypisThis();
+
+const objekt1 = {
+    cislo: 0,
+    zvysCislo: function() {
+        this.cislo++; // this odkazuje na objekt, který jej volá
+    }
+};
+objekt1.zvysCislo(); // this bude v metodě zvysCislo odkazovat na objekt1
+
+const objekt2 = {
+    cislo: 0
+};
+objekt2.zvysCislo = objekt1.zvysCislo;
+objekt2.zvysCislo(); // this bude v metodě zvysCislo odkazovat na objekt2
+
+const el = document.getElementById('tlacitko');
+el.addEventListener('click', function() {
+    console.log(this); // this odkazuje na element, kterému event listener patří (ale nesmíme použít arrow funkci)
+});</code></pre> <h3 class="heading-tertiary u-margin-bottom-small">Změnění na co má klíčové slovo this odkazovat při volání funkce</h3> <p class="paragraph u-margin-bottom-medium">Pokud chceme při volání funkce změnit na co má klíčové slovo this odkazovat, můžeme to udělat pomocí metody call nebo apply. Metoda call přijímá jako první parametr hodnotu na kterou má klíčové slovo this odkazovat a v ostatní parametrech hodnoty, které se mají volané funkci předat jako parametry. Metoda apply to má podobně, ale narozdíl od metody call přijímá jako druhý parametr pole hodnot, které se mají volané funkci předat jako parametry.</p> <pre class="code-box u-margin-bottom-medium"><code>function vypisThis(text, pocet) {
+    for (let i = 0; i &lt; pocet; i++) {
+        console.log(text + " " + this);
+    }
+}
+
+const objekt1 = { id: 1 };
+const objekt2 = { id: 2 };
+
+// zavolání funkce vypisThis - klíčové slovo this bude odkazovat na objekt1
+vypisThis.call(objekt1, 'Klíčové slovo this:', 3);
+
+// stejné jako metoda call, až na to že hodnoty, které se volané funkci přadají jako parametry se předávají v poli
+vypisThis.apply(objekt2, ['Klíčové slovo this:', 3]);</code></pre> <h3 class="heading-tertiary u-margin-bottom-small">Vytvoření nové funkce, která bude mít určeno, na co má klíčové slovo this odkazovat</h3> <p class="paragraph u-margin-bottom-medium">Pokud si chceme předpřipravit na co bude klíčové slovo this odkazovat až později funkci zavoláme, tak k tomu můžeme použít metodu bind. Tato metoda vrací novou funkci, která má již určeno na co klíčové slovo this bude odkazovat když ji budeme volat. Na co bude v nově vytvořené funkci klíčové slovo this odkazovat předáváme metodě bind v prvním parametru. Pokud chceme, tak si můžeme v ostatních parametrech také přednastavit nějaké hodnoty, které se budou automaticky předávat jako parametry když ji budeme volat. Nemuseli bychom je tedy později předávat ručně.</p> <pre class="code-box"><code>function vypisThis(text, pocet) {
+    for (let i = 0; i &lt; pocet; i++) {
+        console.log(text + " " + this);
+    }
+}
+
+const objekt1 = { id: 1 };
+const objekt2 = { id: 2 };
+
+// vytvoření funkce pro vypsání objektu objekt1
+const vypisObjekt1 = vypisThis.bind(objekt1);
+
+// vytvoření funkce pro vypsání objektu objekt2
+const vypisObjekt2 = vypisThis.bind(objekt2, 'Klíčové slovo this:');
+
+vypisObjekt1('Klíčové slovo this:', 3);
+vypisObjekt2(3); // první parametr jsme si přednastavili při vytváření funkce</code></pre> </div> </section> <section id="konstruktor-funkce" class="section section--grey-bg"> <div class="section__content"> <h2 class="heading-secondary u-margin-bottom-medium">Konstruktor funkce</h2> <p class="paragraph u-margin-bottom-medium">Konstruktor funkce je funkce, kterou jsme si vytvořili za účelem vytváření objektů. Je zaběhlá konvence psát první písmeno jména konstruktor funkce velkým písmenem, abychom tak označili že se jedná o konstruktor funkci. Arrow funkce nefungují jako konstruktor funkce, protože nedostávají vlastní this hodnotu.</p> <p class="paragraph u-margin-bottom-medium">Pokud zavoláme funkci s klíčovým slovem new, tak tím řekneme že se má vytvořit nový prázdný objekt a aby na tento objekt ve volané funkci odkazovalo klíčové slovo this. Po dokončení funkce se objekt připojí k prototypu funkce (vytvoří se mu vlastnost __proto__ &lt;- toto se týká spíše OOP v JavaScriptu, nebudu to tu vysvětlovat) a funkce jej vrátí, takže si tento nově vytvořený objekt můžeme uložit třeba do nějaké proměnné.</p> <pre class="code-box u-margin-bottom-medium"><code>// konstuktor funkce (funkce na tvorbu objektů)
+const Osoba = function(jmeno, datumNarozeni) {
+    this.jmeno = jmeno;
+    this.datumNarozeni = datumNarozeni;
+}
+
+// přidání metody k prototypu konstruktor funkce
+// (všechny objekty vytvořené pomocí konstruktoru Osoba k ní budou mít přístup)
+Osoba.prototype.vypisJmeno = function() {
+    console.log(this.jmeno);
+}
+
+// vytvoření objektů pomocí konstruktor funkce Osoba
+const karel = new Osoba('Karel', 2015);
+const pavel = new Osoba('Pavel', 2005);
+</code></pre> <p class="paragraph">Konstruktor funkce se již v JavaScriptu moc nepoužívají protože od ES6 máme třídy, které jsou pro ně syntaktickým cukříkem. Pokud ale budeme třídy používat, myslím že je důležité chápat jak doopravdy vlastně fungují.</p> </div> </section> <section id="closure" class="section section--white-bg"> <div class="section__content"> <h2 class="heading-secondary u-margin-bottom-medium">Closure</h2> <p class="paragraph u-margin-bottom-medium">JavaScript má v sobě zabudovaný mechanismus, kterému se říká closure. Díky closure má funkce, která se nachází v jiné funkci vždy přístup k jejím proměnným i když tato funkce již skončila.</p> <pre class="code-box"><code>const vytvorPozdravFunkci = function(pozdrav) {
+    // funkce vrátí novou funkci (poté skončí)
+    return function(name) {
+        // i když funkce vytvorPozdravFunkci již skončila, díky closure máme hodnotu proměnné pozdrav stále k dispozici
+        console.log(`${pozdrav} ${name}`);
+    }
+}
+
+const pozdrav1 = vytvorPozdravFunkci('Ahoj');
+const pozdrav2 = vytvorPozdravFunkci('Čau');
+
+pozdrav1("Karle"); // vypíše: "Ahoj Karle"
+pozdrav2("Pavle"); // vypíše: "Čau Pavle"</code></pre> </div> </section> <section id="iife" class="section section--grey-bg"> <div class="section__content"> <h2 class="heading-secondary u-margin-bottom-medium">IIFE</h2> <p class="paragraph u-margin-bottom-medium">Immediately Invoked Function Expression (IIFE) je funkce, která se spustí hned jak ji deklarujeme. IIFE se používá k obalení kódu když vytváříme například nějakou knihovnu. Nechceme aby nám někdo kdo s knihovnou bude pracovat například přepsal nějaké proměnné. Pokud je obalíme do IIFE funkce, tak k nim nebude mít přístup a nebude je moci přepsat. Jak IIFE vytvořit ukazuje následující ukázka. Funguje to díky closure.</p> <pre class="code-box u-margin-bottom-medium"><code>
+const pocitadlo = (function() {
+    let pocet = 0;
+
+    // k proměnné pocet budeme mít přístup jen přes tento objekt, který vracíme
+    return {
+        zvys: () => { pocet++; },
+        sniz: () => { pocet--; }
+        vypis: () => {
+            console.log(pocet);
+        }
+    }
+})();
+
+// proměnná pocet zde není k dispozici
+
+// proměnnou pocet ale můžeme měnit pomocí metod v objektu pocitadlo, který IIFE funkce vrátila
+pocitadlo.zvys();
+pocitadlo.vypis();</code></pre> <p class="paragraph">IIFE funkce se v JavaScriptu už tolik nepoužívají, ale můžeme se s nimi setkat u některých knihoven. Od ES6 máme k dispozici moduly.</p> </div> </section> <footer class="footer"> Copyright &copy; by Jiří Satora </footer> </div> </body></html>
