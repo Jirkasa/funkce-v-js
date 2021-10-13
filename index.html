@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=yes maximum-scale=2.2 minimum-scale=1.0">
 
     <link rel="stylesheet" href="./media/css/style.css">
-
     <link rel="icon" type="image/svg+xml" href="./media/img/favicon.svg" />
+
+    <meta name="author" content="Jiří Satora">
+    <meta name="description" content="Skoro vše o funkcích v JavaScriptu na jedné stránce.">
 
     <script src="./media/js/libraries/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
@@ -273,7 +275,7 @@ pozdrav2("Pavle"); // vypíše: "Čau Pavle"</code></pre>
         <section id="iife" class="section section--grey-bg">
             <div class="section__content">
                 <h2 class="heading-secondary u-margin-bottom-medium">IIFE</h2>
-                <p class="paragraph u-margin-bottom-medium">Immidiately Invoked Function Expression (IIFE) je funkce, která se spustí hned jak ji deklarujeme. IIFE se používá k obalení kódu když vytváříme například nějakou knihovnu. Nechceme aby nám někdo kdo s knihovnou bude pracovat například přepsal nějaké proměnné. Pokud je obalíme do IIFE funkce, tak k nim nebude mít přístup a nebude je moci přepsat. Jak IIFE vytvořit ukazuje následující ukázka. Funguje to díky closure.</p>
+                <p class="paragraph u-margin-bottom-medium">Immediately Invoked Function Expression (IIFE) je funkce, která se spustí hned jak ji deklarujeme. IIFE se používá k obalení kódu když vytváříme například nějakou knihovnu. Nechceme aby nám někdo kdo s knihovnou bude pracovat například přepsal nějaké proměnné. Pokud je obalíme do IIFE funkce, tak k nim nebude mít přístup a nebude je moci přepsat. Jak IIFE vytvořit ukazuje následující ukázka. Funguje to díky closure.</p>
                 <pre class="code-box u-margin-bottom-medium"><code>
 const pocitadlo = (function() {
     let pocet = 0;
